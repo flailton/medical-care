@@ -1,0 +1,64 @@
+<div *ngIf="render" class="content" role="main">
+    <h1 class="h3 m-3 font-weight-normal">Visualizar Agendamento</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 font-weight-bold text-right">
+                Paciente:
+            </div>
+            <div class="col-md-6">
+                {{ appointment.user?.name }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 font-weight-bold text-right">
+                Data do Agendamento:
+            </div>
+            <div class="col-md-6">
+                {{ appointment.appointment_at | date:'dd/MM/yyyy hh:m' }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 font-weight-bold text-right">
+                Profissional:
+            </div>
+            <div class="col-md-6">
+                {{ appointment.professional?.name }}
+            </div>
+        </div>
+        <div  class="row text-center">
+            <h1 class="h4 m-3 font-weight-normal">Procedimentos</h1>
+            <div class="col-md-12 text-left">
+                <table *ngIf="(appointment.procedures != undefined)" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Comissão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let procedure of appointment.procedures; let i  = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ procedure.name }}</td>
+                            <td>{{ procedure.description }}</td>
+                            <td align="right">{{ procedure.value | currency:'BRL':true:'1.2-2':'pt' }}</td>
+                            <td align="right">{{ procedure.value * procedure.percent | currency:'BRL':true:'1.2-2':'pt' }}</td>
+                        </tr>
+                        <tr *ngIf="(appointment.procedures.length > 0)">
+                            <td colspan="3" align="right"><b>Total: </b></td>
+                            <td align="right">{{ total_value | currency:'BRL':true:'1.2-2':'pt' }}</td>
+                            <td align="right">{{ total_value_commission | currency:'BRL':true:'1.2-2':'pt' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 offset-md-4">
+                <button class="btn btn-link btn-block m-2" type="button" [routerLink]="['/appointment']">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>
