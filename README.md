@@ -2,7 +2,7 @@
 
 # Medical Care (Front-end)
 
-Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) varsão 11.0.1.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.0.1.
 
 ## Development server
 
@@ -23,15 +23,15 @@ O acesso pode ser feito através do Usuário cadastrado, porém a aplicação pe
 
 ## Navegação
 
-Ao acessar a a aplicação, o usuário será direcionado a tela de Login:
+Ao acessar a aplicação, o usuário será direcionado a tela de Login:
 - O usuário deve inserir o e-mail e a senha nos respectivos campos e se conectar para ter acesso ao sistema.
 - Caso o usuário perca a sessão, o token expire ou ele clique no botão Logout, o Usuário será direcionado para tela de Login novamente.
 
-Ao realizar o login o usuário será redirecionado para tela de Agendar atendimento.
-- O usuário deve preencher os campo de Profissional, Data do agendamento e selecionar ao menos um Procedimento.
+Ao realizar o login o usuário será redirecionado para a tela de Agendar atendimento.
+- O usuário deve preencher os campos de Profissional, Data do agendamento e selecionar ao menos um Procedimento.
 - Para selecionar os Procedimentos, o Usuário deve selecionar o procedimento desejado e clicar no ícone ao lado (Adicionar procedimento).
 - Após preenchidos os campos, para registrar o Agendamento o Usuário deve clicar no botão Salvar.
-- Após salvar o Usuário será redirecionado para tela de Visualizar agendamento.
+- Após salvar o Usuário será redirecionado para a tela de Visualizar agendamento.
 
 Na tela de Visualizar agendamento, o usuário poderá ver as informações do agendamento que foi realizado.
-- Ao clicar no botão Voltar, o usuário será redirecionado para tela de Agendar atendimento.
+- Ao clicar no botão Voltar, o usuário será redirecionado para a tela de Agendar atendimento.
